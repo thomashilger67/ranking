@@ -1,6 +1,5 @@
 import json 
-
-
+import math 
 
 class Ranking:
     def __init__(self,link_doc,link_index) -> None:
@@ -47,7 +46,7 @@ class Ranking:
                 count_query=[x==token for x in document['title'].lower().split()].count(True)
                 
                 freq_token=count_query/count_title
-                sum=sum + (freq_token*(1.2+1))/(freq_token+1.2*(1-0.75+0.75*len(self.query_tokens)/count_title))
+                sum=sum + math.log10(len(self.index)/len(self.filtered_documents))*(freq_token*(1.2+1))/(freq_token+1.2*(1-0.75+0.75*len(self.query_tokens)/count_title))
             
             freq[document['id']]=sum
         
