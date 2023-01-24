@@ -3,7 +3,7 @@ petit projet pour le cours d'indexation web ENSAI 3A SID fait par Thomas Hilger.
 
 ## Quickstart 
 Il faut d'abord convenir de la requête. Pour cela dans le fichier `main.py`, modifier l'argument de la fonction `launch_ranking` avec la rquête de votre choix.
-Pour créer le ranking, il suffit de lancer à la racine du projet la commane `python main.py`. Le ranking nouvellement crée se trouvera dans le fichier json `resuls.json`. On y trouvera également quelques statistiques comme le nombre de docuemnt dans l'index et le nombre de document restant après filtrage sur la requête.
+Pour créer le ranking, il suffit de lancer à la racine du projet la commane `python main.py`. Le ranking nouvellement crée se trouvera dans le fichier json `results.json`. On y trouvera également quelques statistiques comme le nombre de docuemnt dans l'index et le nombre de document restant après filtrage sur la requête.
 
 Pour lancer les tests, déplacez-vous dans le dossier test, puis lancez la commande `pytest`.
 
