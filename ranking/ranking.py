@@ -7,12 +7,19 @@ class Ranking:
         self.index=json.load(open(link_index))
         
     def read_query(self,query):
+        """
+        Traîte la requête, on loerise tous les caractèrise puis on tokenise.
+        
+        """
         self.query=query
         self.query_lower=query.lower()
         self.query_tokens=self.query_lower.split()
 
 
     def filtering(self):
+        """
+        Fonction qui filtre les document de l'index ayant tous les tokens de la requête.
+        """
         try : 
             list_documents=self.documents
             resu=[]
@@ -35,6 +42,9 @@ class Ranking:
 
 
     def ranking(self):
+        """
+        fonction qui crée le ranking des documents filtrés. On utilise le Bm25 comme gfonction linéaire de ranking.
+        """
         freq={}
         for document in self.filtered_documents:
             
@@ -65,6 +75,10 @@ class Ranking:
 
 
     def launh_ranking(self,query):
+        """
+        fonction qui fait tout le processus pour créer un ranking à partir d'une requête
+        
+        """
         self.read_query(query)
         self.filtering()
         self.ranking()
